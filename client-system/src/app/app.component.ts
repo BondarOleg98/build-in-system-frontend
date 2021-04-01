@@ -12,8 +12,6 @@ import { DomSanitizer } from "@angular/platform-browser";
 
 export class AppComponent implements OnInit {
 
-  value = 'Clear me';
-
   dispalyedColumns = ['code_currency', 'name_currency'];
   
   title = 'client-system';
@@ -53,6 +51,7 @@ export class AppComponent implements OnInit {
     this._currencyService.create(this.new_currency).subscribe(
       data => {
         this.getCurrencies();
+        console.log(data);
         return true;
       },
       error => {
